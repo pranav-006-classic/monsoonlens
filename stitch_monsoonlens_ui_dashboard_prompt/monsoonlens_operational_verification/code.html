@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#93ccff", "background": "#151310", "surface-container": "#221f1c", "on-background": "#e8e1dc", "tertiary": "#69f6b9", "surface-tint": "#ffba38", "on-tertiary-fixed-variant": "#005236", "primary": "#ffd79b", "inverse-surface": "#e8e1dc", "on-surface": "#e8e1dc", "on-secondary-fixed": "#001d31", "inverse-primary": "#7e5700", "error-container": "#93000a", "on-tertiary-container": "#005b3d", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#604100", "outline": "#9e8e78", "surface": "#151310", "surface-variant": "#373431", "on-surface-variant": "#d6c4ac", "error": "#ffb4ab", "on-tertiary": "#003824", "on-secondary-fixed-variant": "#004b73", "surface-container-lowest": "#100e0b", "on-primary-container": "#6b4900", "surface-container-high": "#2c2a26", "outline-variant": "#514532", "secondary-fixed": "#cce5ff", "primary-container": "#ffb300", "on-primary-fixed": "#281900", "on-secondary-container": "#002c47", "surface-container-highest": "#373431", "tertiary-container": "#48d99e", "on-error": "#690005", "tertiary-fixed": "#6ffbbe", "on-tertiary-fixed": "#002113", "on-secondary": "#003351", "primary-fixed-dim": "#ffba38", "surface-dim": "#151310", "secondary-fixed-dim": "#93ccff", "primary-fixed": "#ffdeac", "surface-bright": "#3c3935", "surface-container-low": "#1d1b18", "on-primary": "#432c00", "secondary-container": "#3198dc", "inverse-on-surface": "#33302c", "tertiary-fixed-dim": "#4edea3" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "space-2xl": "2rem", "margin-desktop": "1.5rem", "space-lg": "1rem", "gutter": "0.75rem", "space-2xs": "0.125rem", "gutter-desktop": "1rem", "space-md": "0.75rem", "margin": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-xl-mobile": [ "Space Grotesk" ], "body-md": [ "Inter" ], "headline-sm": [ "Space Grotesk" ], "body-lg": [ "Inter" ], "headline-lg": [ "Space Grotesk" ], "data-display-md": [ "JetBrains Mono" ], "label-caps": [ "Space Grotesk" ], "data-tabular": [ "JetBrains Mono" ], "headline-md": [ "Space Grotesk" ], "body-sm": [ "Inter" ], "label-mono-sm": [ "JetBrains Mono" ], "headline-xl": [ "Space Grotesk" ], "headline-lg-mobile": [ "Space Grotesk" ], "data-display-lg": [ "JetBrains Mono" ] }, "fontSize": { "headline-xl-mobile": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "16px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-lg": [ "26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "data-display-md": [ "20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-caps": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" } ], "data-tabular": [ "13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-md": [ "20px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-mono-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" } ], "data-display-lg": [ "32px", { "lineHeight": "36px", "letterSpacing": "-0.03em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-14 bg-surface-container-lowest/95 backdrop-blur-md z-50 shadow-[0_1px_8px_rgba(0,0,0,0.6)] flex items-center justify-between px-margin-desktop gap-space-lg"><div class="flex items-center gap-space-lg flex-shrink-0"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-[20px]">radar</span></div><div><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">MonsoonLens</span><span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-tertiary font-label-mono-sm text-label-mono-sm">v2.4</span></div><span class="font-label-caps text-label-caps text-on-surface-variant block uppercase">Ministry of Earth Sciences · IMD</span></div></div><div class="h-6 w-px bg-surface-variant hidden lg:block"></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low p-space-2xs rounded-lg"><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-primary bg-primary-container font-semibold transition-colors">Day 1 · Today</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 2</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 3</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 4</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 5</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 6</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 7</button></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center bg-surface-container-low p-space-2xs rounded-lg"><button class="px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm bg-surface-container-high text-primary font-medium transition-colors">Open-Meteo</button><button class="px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">GFS Ensemble</button></div><div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-mono-sm text-label-mono-sm text-tertiary uppercase tracking-wide">Cycle: 00Z OPERATIONAL</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-mono-sm text-label-mono-sm text-on-surface">FORECASTER #408</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">HQ New Delhi · Shift A</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-14 bottom-0 w-80 bg-surface-container-lowest z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md flex flex-col gap-space-md"><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase px-space-xs">Navigation Console</span><nav class="flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span>Overview</a><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="district-explorer" href="#"><span class="material-symbols-outlined text-[18px]">travel_explore</span>District Explorer</a><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="regime-analysis" href="#"><span class="material-symbols-outlined text-[18px]">air</span>Regime Analysis</a><a aria-current="page" class="px-space-sm py-space-xs transition-colors flex items-center gap-space-sm bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="verification" href="#"><span class="material-symbols-outlined text-[18px]">fact_check</span>Verification</a><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="methodology-and-docs" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span>Methodology &amp; Docs</a></nav></div><div class="flex flex-col gap-space-md bg-surface-container-low p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><span class="font-label-caps text-label-caps text-primary uppercase">Operational Filters</span><div class="flex flex-col gap-space-xs"><label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Target Meteorological Sub-Division</label><div class="relative"><select class="w-full appearance-none bg-surface-container-high text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-space-xs pr-space-xl focus:outline-none focus:ring-1 focus:ring-primary"><option value="all">All India (Pan-Monsoon)</option><option value="ghats">Western Ghats &amp; Konkan</option><option value="northeast">Northeast India Sub-Grid</option><option value="central">Central India Core Monsoon</option></select><span class="material-symbols-outlined text-on-surface-variant absolute right-space-sm top-1/2 -translate-y-1/2 pointer-events-none text-[18px]">expand_more</span></div></div><div class="flex flex-col gap-space-xs"><label class="font-label-caps text-label-caps text-on-surface-variant uppercase">District Fast Find</label><div class="relative flex items-center"><span class="material-symbols-outlined text-on-surface-variant absolute left-space-sm text-[16px]">search</span><input class="w-full bg-surface-container-high text-on-surface font-body-sm text-body-sm rounded-lg pl-space-xl pr-space-xl py-space-xs placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search district or station..." type="text"/><kbd class="absolute right-space-sm font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-space-2xs py-space-2xs rounded">Ctrl+K</kbd></div></div><div class="flex flex-col gap-space-xs"><label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Rainfall Intensity Class</label><div class="grid grid-cols-2 gap-space-xs"><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;20 mm</span><span class="w-2 h-2 rounded-full bg-secondary"></span></button><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;64.5 mm</span><span class="w-2 h-2 rounded-full bg-primary-container"></span></button><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;115.6 mm</span><span class="w-2 h-2 rounded-full bg-surface-tint"></span></button><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;204.5 mm</span><span class="w-2 h-2 rounded-full bg-error"></span></button></div></div></div><div class="p-space-md rounded-xl bg-error-container/20 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-error uppercase">Active Triage Alert</span><span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span></div><div class="flex items-baseline gap-space-xs"><span class="font-data-display-md text-data-display-md text-error">14</span><span class="font-body-sm text-body-sm text-on-surface-variant">Districts in Warning State</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Red / Orange bulletin issued within 6h</span></div></div><div class="p-space-md bg-surface-container-lowest"><div class="flex items-center justify-between px-space-xs"><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">STATION TELEMETRY</span><span class="px-space-xs py-space-2xs rounded bg-tertiary/10 text-tertiary font-label-mono-sm text-label-mono-sm">SYNC OK</span></div></div></aside><div class="pl-80 flex flex-col min-h-screen"><main class="relative pt-14 flex-1 w-full px-space-lg bg-surface"><div class="flex flex-col w-full gap-space-lg pb-space-2xl">
+<!-- Top Command & Verification Context Strip -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Temporal Baseline</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-semibold">JJAS 2024-2025 (Southwest Monsoon)</span>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-variant hidden md:block"></div>
+<!-- Lead Time Toggle -->
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Forecast Horizon (Lead Time)</span>
+<div class="inline-flex bg-surface-container-low p-space-2xs rounded-lg gap-space-2xs" id="leadTimeGroup">
+<button class="lead-btn px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm bg-primary-container text-on-primary font-bold shadow-sm transition-all" data-lead="24">Day 1 (24h)</button>
+<button class="lead-btn px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-lead="48">Day 2 (48h)</button>
+<button class="lead-btn px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-lead="72">Day 3 (72h)</button>
+<button class="lead-btn px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-lead="120">Day 5 (120h)</button>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-variant hidden md:block"></div>
+<!-- Domain & Ground Truth Dataset -->
+<div class="flex items-center gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ground Truth Standard</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            IMD 0.25° Gridded Gauge-Satellite Blend
+          </span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Spatial Mask</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface">Pan-India (732 Districts)</span>
+</div>
+</div>
+</div>
+<!-- Export & Audit Pipeline -->
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors font-label-mono-sm text-label-mono-sm shadow-sm" onclick="triggerToast('Compiling IMD Quarterly Verification Dossier PDF...')">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+        IMD Audit PDF
+      </button>
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors font-label-mono-sm text-label-mono-sm shadow-sm" onclick="triggerToast('Generating NetCDF-4 Skill Matrix bundle...')">
+<span class="material-symbols-outlined text-[16px] text-secondary">database</span>
+        NetCDF-4 Matrix
+      </button>
+<button class="flex items-center justify-center w-8 h-8 rounded bg-surface-container-low text-on-surface-variant hover:text-primary transition-colors" onclick="triggerToast('Ground truth observation cache refreshed from IMD Pune')" title="Sync Verification Buffers">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Operational Status Banner & Key Scorecard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-space-md">
+<!-- Metric 1: RMSE -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-tertiary/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Root Mean Square Error</span>
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-semibold">-36.1%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-data-display-lg text-data-display-lg text-tertiary font-bold" id="statRmse">13.8</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">mm/day</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md px-space-md py-space-2xs">
+<span class="text-error">Raw NWP: 21.6 mm</span>
+<span class="text-tertiary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">trending_down</span> -7.8 mm
+        </span>
+</div>
+</div>
+<!-- Metric 2: MAE -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-tertiary/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Mean Absolute Error</span>
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-semibold">-37.3%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-data-display-lg text-data-display-lg text-tertiary font-bold" id="statMae">8.9</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">mm/day</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md px-space-md py-space-2xs">
+<span class="text-error">Raw NWP: 14.2 mm</span>
+<span class="text-tertiary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">trending_down</span> -5.3 mm
+        </span>
+</div>
+</div>
+<!-- Metric 3: Critical Success Index (CSI) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-primary-container/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Threat Score (&gt;64.5mm)</span>
+<span class="px-space-xs py-space-2xs rounded bg-primary-container/20 text-primary font-label-mono-sm text-label-mono-sm font-semibold">+56.1%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-data-display-lg text-data-display-lg text-primary font-bold" id="statCsi">0.64</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">CSI index</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md px-space-md py-space-2xs">
+<span class="text-on-surface-variant">Raw NWP: 0.41</span>
+<span class="text-primary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +0.23
+        </span>
+</div>
+</div>
+<!-- Metric 4: False Alarm Ratio (FAR) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-secondary/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">False Alarm Ratio</span>
+<span class="px-space-xs py-space-2xs rounded bg-secondary/20 text-secondary font-label-mono-sm text-label-mono-sm font-semibold">-50.0%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-data-display-lg text-data-display-lg text-secondary font-bold" id="statFar">0.19</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">FAR (0 to 1)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md px-space-md py-space-2xs">
+<span class="text-error">Raw NWP: 0.38</span>
+<span class="text-secondary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">trending_down</span> -0.19
+        </span>
+</div>
+</div>
+<!-- Metric 5: Heidke Skill Score (HSS) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-surface-tint/10 blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Heidke Skill Score</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-tint/20 text-surface-tint font-label-mono-sm text-label-mono-sm font-semibold">+40.4%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-data-display-lg text-data-display-lg text-surface-tint font-bold" id="statHss">0.73</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">HSS value</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md px-space-md py-space-2xs">
+<span class="text-on-surface-variant">Raw NWP: 0.52</span>
+<span class="text-surface-tint flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +0.21
+        </span>
+</div>
+</div>
+</div>
+<!-- Deep Meteorological Analytics: Split Diagnostic Cockpit -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Analytical Panel Left: Reliability Diagram (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-sm pb-space-xs bg-surface-container-low/30 rounded-lg p-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">ssid_chart</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Reliability &amp; Calibration Curve</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Categorical Exceedance: Heavy Rain &gt; 64.5 mm/day</p>
+</div>
+</div>
+<!-- Legend indicators -->
+<div class="flex items-center gap-space-sm font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center gap-space-2xs">
+<span class="w-3 h-0.5 bg-tertiary"></span>
+<span class="text-tertiary">AI Post-Processed</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="w-3 h-0.5 bg-error"></span>
+<span class="text-error">Raw NWP (GFS 0.25°)</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="w-3 h-0.5 bg-on-surface-variant/40 stroke-dasharray"></span>
+<span class="text-on-surface-variant">Perfect Reliability</span>
+</div>
+</div>
+</div>
+<!-- SVG Chart: Reliability Canvas -->
+<div class="relative w-full h-80 bg-surface-container-low/50 rounded-lg p-space-xs flex items-center justify-center">
+<svg class="w-full h-full text-on-surface overflow-visible" preserveaspectratio="none" viewbox="0 0 540 300">
+<!-- Background Grid Lines -->
+<line stroke="currentColor" stroke-opacity="0.08" x1="60" x2="510" y1="20" y2="20"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="60" x2="510" y1="70" y2="70"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="60" x2="510" y1="120" y2="120"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="60" x2="510" y1="170" y2="170"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="60" x2="510" y1="220" y2="220"></line>
+<line stroke="currentColor" stroke-opacity="0.25" x1="60" x2="510" y1="250" y2="250"></line>
+<line stroke="currentColor" stroke-opacity="0.25" x1="60" x2="60" y1="20" y2="250"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="150" x2="150" y1="20" y2="250"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="240" x2="240" y1="20" y2="250"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="330" x2="330" y1="20" y2="250"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="420" x2="420" y1="20" y2="250"></line>
+<line stroke="currentColor" stroke-opacity="0.08" x1="510" x2="510" y1="20" y2="250"></line>
+<!-- Perfect 1:1 Diagonal -->
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.3" stroke-width="1.5" x1="60" x2="510" y1="250" y2="20"></line>
+<!-- No Skill / Climatology Band (Subtle Fill) -->
+<polygon fill="currentColor" fill-opacity="0.02" points="60,250 510,250 510,135"></polygon>
+<!-- Raw NWP Curve (Severely Overforecasting -> Below Diagonal) -->
+<!-- Points: (0, 0.02), (0.2, 0.08), (0.4, 0.16), (0.6, 0.28), (0.8, 0.44), (1.0, 0.62) -->
+<polyline fill="none" points="60,246 150,232 240,213 330,185 420,148 510,107" stroke="#ffb4ab" stroke-width="2.5"></polyline>
+<!-- AI Post-Processed Curve (Hugging 1:1 closely) -->
+<!-- Points: (0, 0.01), (0.2, 0.19), (0.4, 0.38), (0.6, 0.59), (0.8, 0.81), (1.0, 0.98) -->
+<polyline fill="none" points="60,248 150,206 240,162 330,114 420,64 510,25" stroke="#69f6b9" stroke-width="3"></polyline>
+<!-- AI Post-Processed Scatter Anchors -->
+<circle cx="60" cy="248" fill="#69f6b9" r="4"></circle>
+<circle cx="150" cy="206" fill="#69f6b9" r="4"></circle>
+<circle cx="240" cy="162" fill="#69f6b9" r="4"></circle>
+<circle cx="330" cy="114" fill="#69f6b9" r="4"></circle>
+<circle cx="420" cy="64" fill="#69f6b9" r="4"></circle>
+<circle cx="510" cy="25" fill="#69f6b9" r="4"></circle>
+<!-- Raw NWP Scatter Anchors -->
+<circle cx="60" cy="246" fill="#ffb4ab" r="3"></circle>
+<circle cx="150" cy="232" fill="#ffb4ab" r="3"></circle>
+<circle cx="240" cy="213" fill="#ffb4ab" r="3"></circle>
+<circle cx="330" cy="185" fill="#ffb4ab" r="3"></circle>
+<circle cx="420" cy="148" fill="#ffb4ab" r="3"></circle>
+<circle cx="510" cy="107" fill="#ffb4ab" r="3"></circle>
+<!-- Frequency Sharpness Mini Histogram at the bottom -->
+<rect fill="#69f6b9" fill-opacity="0.6" height="12" rx="1" width="12" x="70" y="238"></rect>
+<rect fill="#69f6b9" fill-opacity="0.6" height="20" rx="1" width="12" x="160" y="230"></rect>
+<rect fill="#69f6b9" fill-opacity="0.6" height="28" rx="1" width="12" x="250" y="222"></rect>
+<rect fill="#69f6b9" fill-opacity="0.6" height="40" rx="1" width="12" x="340" y="210"></rect>
+<rect fill="#69f6b9" fill-opacity="0.6" height="55" rx="1" width="12" x="430" y="195"></rect>
+<rect fill="#69f6b9" fill-opacity="0.6" height="70" rx="1" width="12" x="495" y="180"></rect>
+<!-- Axis Labels -->
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="middle" x="60" y="270">0.0</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="middle" x="150" y="270">0.2</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="middle" x="240" y="270">0.4</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="middle" x="330" y="270">0.6</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="middle" x="420" y="270">0.8</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="middle" x="510" y="270">1.0</text>
+<text fill="currentColor" font-family="Space Grotesk" font-size="11" font-weight="600" opacity="0.8" text-anchor="middle" x="285" y="292">FORECAST PROBABILITY OF OCCURRENCE</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="end" x="48" y="253">0.0</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="end" x="48" y="205">0.2</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="end" x="48" y="157">0.4</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="end" x="48" y="110">0.6</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="end" x="48" y="63">0.8</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="10" opacity="0.6" text-anchor="end" x="48" y="23">1.0</text>
+<!-- Annotations inside chart -->
+<g transform="translate(360, 160)">
+<rect fill="#221f1c" height="36" opacity="0.9" rx="4" width="135"></rect>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="9" x="8" y="16">Raw NWP Over-Confidence</text>
+<text fill="#d6c4ac" font-family="Inter" font-size="8" x="8" y="28">Wet Bias on heavy events</text>
+</g>
+<g transform="translate(180, 75)">
+<rect fill="#221f1c" height="36" opacity="0.9" rx="4" width="125"></rect>
+<text fill="#69f6b9" font-family="JetBrains Mono" font-size="9" x="8" y="16">AI Calibrated Envelope</text>
+<text fill="#d6c4ac" font-family="Inter" font-size="8" x="8" y="28">Brier Score = 0.082</text>
+</g>
+</svg>
+</div>
+<!-- Reliability Footer Note -->
+<div class="mt-space-sm pt-space-xs bg-surface-container-low px-space-md py-space-xs rounded-lg flex flex-wrap items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Brier Score: <strong class="text-tertiary">0.082 (AI)</strong> vs <strong class="text-error">0.174 (Raw)</strong></span>
+<span>Resolution Skill Score (RES): <strong class="text-primary">0.046</strong></span>
+<span>IMD Calibration Compliance: <strong class="text-tertiary">CLASS-A PASS</strong></span>
+</div>
+</div>
+<!-- Analytical Panel Right: Taylor Diagram & Variance Coherence (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm pb-space-xs bg-surface-container-low/30 rounded-lg p-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">radar</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Taylor Diagram Diagnostics</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Pattern Correlation &amp; Normalized RMSD</p>
+</div>
+</div>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-secondary font-label-mono-sm text-label-mono-sm">R=0.88</span>
+</div>
+<!-- Taylor Diagram Polar Projection SVG -->
+<div class="relative w-full h-80 bg-surface-container-low/50 rounded-lg p-space-xs flex items-center justify-center">
+<svg class="w-full h-full text-on-surface overflow-visible" preserveaspectratio="none" viewbox="0 0 340 300">
+<!-- Polar origin at (40, 260) -->
+<!-- Radial arcs for standard deviation -->
+<path d="M 40,260 A 60 60 0 0 1 100,260" fill="none" stroke="currentColor" stroke-opacity="0.1"></path>
+<path d="M 40,260 A 120 120 0 0 1 160,260" fill="none" stroke="currentColor" stroke-opacity="0.1"></path>
+<path d="M 40,260 A 180 180 0 0 1 220,260" fill="none" stroke="currentColor" stroke-opacity="0.1"></path>
+<path d="M 40,260 A 240 240 0 0 1 280,260" fill="none" stroke="currentColor" stroke-dasharray="2 2" stroke-opacity="0.25"></path>
+<!-- Angular radial rays for Pearson Correlation Coefficient -->
+<!-- 0.99 (~8 deg) -->
+<line stroke="currentColor" stroke-opacity="0.1" x1="40" x2="277" y1="260" y2="226"></line>
+<!-- 0.90 (~26 deg) -->
+<line stroke="currentColor" stroke-opacity="0.1" x1="40" x2="255" y1="260" y2="155"></line>
+<!-- 0.70 (~45 deg) -->
+<line stroke="currentColor" stroke-opacity="0.1" x1="40" x2="210" y1="260" y2="90"></line>
+<!-- 0.50 (~60 deg) -->
+<line stroke="currentColor" stroke-opacity="0.1" x1="40" x2="160" y1="260" y2="52"></line>
+<!-- 0.00 (90 deg) -->
+<line stroke="currentColor" stroke-opacity="0.2" x1="40" x2="40" y1="260" y2="20"></line>
+<!-- Baseline Axis -->
+<line stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" x1="40" x2="290" y1="260" y2="260"></line>
+<!-- Centered RMSD concentric circles centered around REF Observation point (220, 260) -->
+<!-- REF Point radius standard deviation = 1.0 (approx 180 px from origin) -->
+<circle cx="220" cy="260" fill="none" r="40" stroke="#69f6b9" stroke-dasharray="3 3" stroke-opacity="0.15"></circle>
+<circle cx="220" cy="260" fill="none" r="80" stroke="#69f6b9" stroke-dasharray="3 3" stroke-opacity="0.15"></circle>
+<circle cx="220" cy="260" fill="none" r="120" stroke="#69f6b9" stroke-dasharray="3 3" stroke-opacity="0.15"></circle>
+<!-- Reference Point (IMD Ground Truth) -->
+<circle cx="220" cy="260" fill="#ffd79b" r="5"></circle>
+<text fill="#ffd79b" font-family="JetBrains Mono" font-size="9" font-weight="700" text-anchor="middle" x="220" y="278">REF (IMD 0.25°)</text>
+<!-- Raw NWP Point: R = 0.62, Normalized Std = 1.45 -->
+<!-- Coordinates: x = 40 + 240*cos(51.6deg) = 40 + 148 = 188; y = 260 - 240*sin(51.6) = 260 - 188 = 72 -->
+<circle cx="178" cy="115" fill="#ffb4ab" r="5"></circle>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="9" font-weight="600" x="186" y="112">Raw NWP</text>
+<text fill="#d6c4ac" font-family="JetBrains Mono" font-size="7" x="186" y="123">r=0.62 · s=1.38</text>
+<!-- AI Post-Processed Point: R = 0.88, Normalized Std = 1.03 -->
+<!-- Closer to REF Point! Coordinates: around x=206, y=210 -->
+<circle class="animate-pulse" cx="204" cy="216" fill="#69f6b9" r="6"></circle>
+<text fill="#69f6b9" font-family="JetBrains Mono" font-size="9" font-weight="700" x="214" y="212">AI Model v2.4</text>
+<text fill="#d6c4ac" font-family="JetBrains Mono" font-size="7" x="214" y="223">r=0.88 · s=1.04</text>
+<!-- Radial Labels -->
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" opacity="0.6" x="282" y="255">r=1.0</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" opacity="0.6" x="257" y="150">0.9</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" opacity="0.6" x="212" y="85">0.7</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" opacity="0.6" x="162" y="48">0.5</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" opacity="0.6" x="35" y="15">0.0</text>
+<!-- Title Overlay -->
+<text fill="currentColor" font-family="Space Grotesk" font-size="9" opacity="0.4" x="50" y="40">CORRELATION (r)</text>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="8" opacity="0.5" text-anchor="middle" x="220" y="295">Standard Deviation [Normalized]</text>
+</svg>
+</div>
+<!-- Taylor Stats Summary -->
+<div class="mt-space-sm pt-space-xs bg-surface-container-low px-space-md py-space-xs rounded-lg flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<div>Centered RMSD: <strong class="text-tertiary">0.42</strong> (Raw: 0.94)</div>
+<div class="text-right">Spatial Coherence: <strong class="text-primary">+41.9%</strong></div>
+</div>
+</div>
+</div>
+<!-- Meteorological Sub-Divisional Performance Ranking (36 Sub-Divisions) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">format_list_numbered</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sub-Divisional Performance Ranking</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Comparative Benchmarks Across India's 36 Meteorological Subdivisions (Sorted by Skill Gain)</p>
+</div>
+</div>
+<!-- Search & Subdivision Filter Bar -->
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant absolute left-space-sm top-1/2 -translate-y-1/2 text-[16px]">filter_list</span>
+<input class="bg-surface-container-low text-on-surface font-label-mono-sm text-label-mono-sm rounded-lg pl-space-xl pr-space-md py-space-xs focus:outline-none focus:ring-1 focus:ring-primary w-56 placeholder:text-on-surface-variant/40" id="subdivSearch" onkeyup="filterSubdivisions()" placeholder="Filter subdivision..." type="text"/>
+</div>
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high text-on-surface font-label-mono-sm text-label-mono-sm hover:bg-surface-variant transition-colors flex items-center gap-space-2xs" onclick="exportTableCSV()">
+<span class="material-symbols-outlined text-[16px]">table_view</span>
+          Export CSV
+        </button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="w-full overflow-x-auto rounded-lg bg-surface-container-low/40">
+<table class="w-full text-left font-data-tabular text-data-tabular">
+<thead class="bg-surface-container-high/60 text-on-surface-variant font-label-caps text-label-caps uppercase border-b-0">
+<tr>
+<th class="py-space-xs px-space-md">Met Subdivision</th>
+<th class="py-space-xs px-space-md text-right">Observed Mean (mm)</th>
+<th class="py-space-xs px-space-md text-right">Raw NWP RMSE</th>
+<th class="py-space-xs px-space-md text-right">AI-Corrected RMSE</th>
+<th class="py-space-xs px-space-md text-right">Skill Delta (%)</th>
+<th class="py-space-xs px-space-md text-center">Threat Score (CSI)</th>
+<th class="py-space-xs px-space-md text-center">Verification Status</th>
+<th class="py-space-xs px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="subdivisionTbody">
+<!-- Row 1: Konkan & Goa -->
+<tr class="subdiv-row hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+              Konkan &amp; Goa
+              <span class="px-space-2xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-mono-sm text-[10px]">ZONE-W</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface">34.8</td>
+<td class="py-space-sm px-space-md text-right text-error font-medium">38.4 mm</td>
+<td class="py-space-sm px-space-md text-right text-tertiary font-bold">19.2 mm</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-bold">+50.0%</span>
+</td>
+<td class="py-space-sm px-space-md text-center font-label-mono-sm text-label-mono-sm text-primary">0.72 <span class="text-on-surface-variant text-[10px]">(+67%)</span></td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/20 text-tertiary font-label-mono-sm text-[11px]">BENCHMARK PASSED</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="text-primary hover:text-primary-container font-label-mono-sm text-[11px] underline" onclick="triggerToast('Downloaded Konkan &amp; Goa gridded telemetry log')">Log .CSV</button>
+</td>
+</tr>
+<!-- Row 2: Coastal Karnataka -->
+<tr class="subdiv-row bg-surface-container-low/20 hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+              Coastal Karnataka
+              <span class="px-space-2xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-mono-sm text-[10px]">ZONE-S</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface">36.1</td>
+<td class="py-space-sm px-space-md text-right text-error font-medium">41.2 mm</td>
+<td class="py-space-sm px-space-md text-right text-tertiary font-bold">21.5 mm</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-bold">+47.8%</span>
+</td>
+<td class="py-space-sm px-space-md text-center font-label-mono-sm text-label-mono-sm text-primary">0.69 <span class="text-on-surface-variant text-[10px]">(+53%)</span></td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/20 text-tertiary font-label-mono-sm text-[11px]">BENCHMARK PASSED</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="text-primary hover:text-primary-container font-label-mono-sm text-[11px] underline" onclick="triggerToast('Downloaded Coastal Karnataka gridded telemetry log')">Log .CSV</button>
+</td>
+</tr>
+<!-- Row 3: Assam & Meghalaya -->
+<tr class="subdiv-row hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+              Assam &amp; Meghalaya
+              <span class="px-space-2xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-mono-sm text-[10px]">ZONE-NE</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface">26.4</td>
+<td class="py-space-sm px-space-md text-right text-error font-medium">32.6 mm</td>
+<td class="py-space-sm px-space-md text-right text-tertiary font-bold">18.4 mm</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-bold">+43.5%</span>
+</td>
+<td class="py-space-sm px-space-md text-center font-label-mono-sm text-label-mono-sm text-primary">0.65 <span class="text-on-surface-variant text-[10px]">(+44%)</span></td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/20 text-tertiary font-label-mono-sm text-[11px]">BENCHMARK PASSED</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="text-primary hover:text-primary-container font-label-mono-sm text-[11px] underline" onclick="triggerToast('Downloaded Assam &amp; Meghalaya gridded telemetry log')">Log .CSV</button>
+</td>
+</tr>
+<!-- Row 4: Vidarbha -->
+<tr class="subdiv-row bg-surface-container-low/20 hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Vidarbha
+              <span class="px-space-2xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-mono-sm text-[10px]">ZONE-C</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface">12.3</td>
+<td class="py-space-sm px-space-md text-right text-error font-medium">17.8 mm</td>
+<td class="py-space-sm px-space-md text-right text-tertiary font-bold">10.7 mm</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-bold">+39.8%</span>
+</td>
+<td class="py-space-sm px-space-md text-center font-label-mono-sm text-label-mono-sm text-primary">0.58 <span class="text-on-surface-variant text-[10px]">(+38%)</span></td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/20 text-tertiary font-label-mono-sm text-[11px]">BENCHMARK PASSED</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="text-primary hover:text-primary-container font-label-mono-sm text-[11px] underline" onclick="triggerToast('Downloaded Vidarbha gridded telemetry log')">Log .CSV</button>
+</td>
+</tr>
+<!-- Row 5: Sub-Himalayan West Bengal & Sikkim -->
+<tr class="subdiv-row hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+              Sub-Himalayan West Bengal
+              <span class="px-space-2xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-mono-sm text-[10px]">ZONE-E</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface">28.9</td>
+<td class="py-space-sm px-space-md text-right text-error font-medium">35.4 mm</td>
+<td class="py-space-sm px-space-md text-right text-tertiary font-bold">22.1 mm</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-bold">+37.5%</span>
+</td>
+<td class="py-space-sm px-space-md text-center font-label-mono-sm text-label-mono-sm text-primary">0.63 <span class="text-on-surface-variant text-[10px]">(+47%)</span></td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/20 text-tertiary font-label-mono-sm text-[11px]">BENCHMARK PASSED</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="text-primary hover:text-primary-container font-label-mono-sm text-[11px] underline" onclick="triggerToast('Downloaded SHWB gridded telemetry log')">Log .CSV</button>
+</td>
+</tr>
+<!-- Row 6: Rayalaseema -->
+<tr class="subdiv-row bg-surface-container-low/20 hover:bg-surface-container-high/50 transition-colors">
+<td class="py-space-sm px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Rayalaseema
+              <span class="px-space-2xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-mono-sm text-[10px]">ZONE-S</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface">7.8</td>
+<td class="py-space-sm px-space-md text-right text-error font-medium">12.1 mm</td>
+<td class="py-space-sm px-space-md text-right text-tertiary font-bold">7.9 mm</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/15 text-tertiary font-label-mono-sm text-label-mono-sm font-bold">+34.7%</span>
+</td>
+<td class="py-space-sm px-space-md text-center font-label-mono-sm text-label-mono-sm text-primary">0.51 <span class="text-on-surface-variant text-[10px]">(+31%)</span></td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/20 text-tertiary font-label-mono-sm text-[11px]">BENCHMARK PASSED</span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="text-primary hover:text-primary-container font-label-mono-sm text-[11px] underline" onclick="triggerToast('Downloaded Rayalaseema gridded telemetry log')">Log .CSV</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Meta Footer -->
+<div class="flex flex-wrap items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm pt-space-xs px-space-xs">
+<div class="flex items-center gap-space-sm">
+<span>Displaying 6 of 36 Meteorological Sub-Divisions</span>
+<span class="text-on-surface">·</span>
+<span class="text-tertiary">36 / 36 subdivisions passed baseline operational criteria (&gt;25% error decrease)</span>
+</div>
+<button class="px-space-sm py-space-2xs rounded bg-surface-container-high text-on-surface hover:text-primary font-semibold transition-colors" onclick="triggerToast('Expanded to all 36 IMD meteorological divisions.')">
+        View All 36 Divisions
+      </button>
+</div>
+</div>
+<!-- Physical Dispersion & Orographic Diagnostics Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Western Ghats Orographic Wet Bias -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase">Orographic Bias Attenuation</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-[10px]">W. Ghats Transect</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline justify-between mb-space-2xs">
+<span class="font-body-md text-body-md text-on-surface">Windward Slope Wet Bias</span>
+<span class="font-label-mono-sm text-label-mono-sm text-error font-semibold">+68% Raw NWP</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden mb-space-xs">
+<div class="h-full bg-error rounded-full" style="width: 78%"></div>
+</div>
+<div class="flex items-baseline justify-between mb-space-2xs">
+<span class="font-body-md text-body-md text-on-surface">AI UNet Residual Correction</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-semibold">+4.2% (Nominal)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 14%"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The AI post-processing accurately dampens the chronic steep-slope spurious convective precipitation on the Konkan escarpment.</p>
+</div>
+<!-- Card 2: Monsoon Low Pressure Systems (LPS) Tracking -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Synoptic LPS Vortex Verification</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-[10px]">Bay of Bengal</span>
+</div>
+<div class="my-space-sm flex items-center justify-around text-center py-space-xs bg-surface-container-lowest/50 rounded-lg">
+<div>
+<span class="font-data-display-md text-data-display-md text-on-surface font-bold">58 km</span>
+<span class="block font-label-caps text-label-caps text-on-surface-variant uppercase">AI Track Error</span>
+</div>
+<div class="h-8 w-px bg-surface-variant"></div>
+<div>
+<span class="font-data-display-md text-data-display-md text-error font-bold">142 km</span>
+<span class="block font-label-caps text-label-caps text-on-surface-variant uppercase">Raw GFS Error</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Central core rainfall positioning improved by 84 km average over 12 cyclonic vortices in the Bay of Bengal during JJAS 2024.</p>
+</div>
+<!-- Card 3: Extreme Rainfall Warning Accuracy (>115.6 mm) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-error uppercase">Very Heavy Rain Threshold</span>
+<span class="px-space-xs py-space-2xs rounded bg-error/15 text-error font-label-mono-sm text-[10px]">&gt;115.6 mm</span>
+</div>
+<div class="my-space-sm space-y-space-xs">
+<div class="flex items-center justify-between text-on-surface font-label-mono-sm text-label-mono-sm">
+<span>Hit Rate (POD):</span>
+<span class="text-tertiary font-bold">0.78 (AI) <span class="text-on-surface-variant font-normal">vs 0.54 (Raw)</span></span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-label-mono-sm text-label-mono-sm">
+<span>False Alarm Rate:</span>
+<span class="text-tertiary font-bold">0.14 (AI) <span class="text-on-surface-variant font-normal">vs 0.42 (Raw)</span></span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-label-mono-sm text-label-mono-sm">
+<span>Equitable Threat Score:</span>
+<span class="text-primary font-bold">0.59 (AI) <span class="text-on-surface-variant font-normal">vs 0.33 (Raw)</span></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Red Bulletin alerts for localized extreme downpours show 48% fewer false-positive triggers across urban metros.</p>
+</div>
+</div>
+<!-- Operational Audit Sign-off Terminal -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-tertiary/15 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[22px]">policy</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">IMD National Verification Registry</span>
+<span class="px-space-xs py-space-2xs rounded bg-tertiary/10 text-tertiary font-label-mono-sm text-label-mono-sm">OPERATIONAL CERTIFIED</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Model Checkpoint: Monsoon-UNet-Regime-v2.4 | Calibration Reference ID: IMD-VAL-2024-JJAS-Q3</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<button class="px-space-md py-space-xs rounded bg-surface-container-high text-on-surface font-label-mono-sm text-label-mono-sm hover:bg-surface-variant transition-colors" onclick="triggerToast('Viewing full statistical methodology and peer-reviewed math equations.')">
+        Mathematical Formulas
+      </button>
+<button class="px-space-md py-space-xs rounded bg-primary-container text-on-primary font-label-mono-sm text-label-mono-sm font-bold shadow-md hover:bg-surface-tint transition-colors flex items-center gap-space-xs" onclick="triggerToast('Cryptographic signature applied: Verification Dossier synced with IMD MoES archives.')">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+        Sign Off Benchmark
+      </button>
+</div>
+</div>
+<!-- Transient Operational Notification Toast -->
+<div class="fixed bottom-12 right-6 bg-surface-container-highest text-on-surface px-space-md py-space-sm rounded-lg shadow-xl font-label-mono-sm text-label-mono-sm flex items-center gap-space-sm pointer-events-none opacity-0 transition-opacity duration-300 z-50" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary text-[18px]">info</span>
+<span id="toastMessage">Verification action complete</span>
+</div>
+</div>
+<script>
+  // Lead Time Interactive Simulator
+  const leadButtons = document.querySelectorAll('.lead-btn');
+  const statRmse = document.getElementById('statRmse');
+  const statMae = document.getElementById('statMae');
+  const statCsi = document.getElementById('statCsi');
+  const statFar = document.getElementById('statFar');
+  const statHss = document.getElementById('statHss');
+
+  const leadData = {
+    '24': { rmse: '13.8', mae: '8.9', csi: '0.64', far: '0.19', hss: '0.73' },
+    '48': { rmse: '15.2', mae: '9.8', csi: '0.61', far: '0.22', hss: '0.70' },
+    '72': { rmse: '17.1', mae: '11.0', csi: '0.57', far: '0.26', hss: '0.65' },
+    '120': { rmse: '20.4', mae: '13.5', csi: '0.49', far: '0.31', hss: '0.58' }
+  };
+
+  leadButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      leadButtons.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+
+      const lead = btn.getAttribute('data-lead');
+      if (leadData[lead]) {
+        statRmse.textContent = leadData[lead].rmse;
+        statMae.textContent = leadData[lead].mae;
+        statCsi.textContent = leadData[lead].csi;
+        statFar.textContent = leadData[lead].far;
+        statHss.textContent = leadData[lead].hss;
+      }
+      triggerToast('Loaded Day ' + (lead === '24' ? '1 (24h)' : lead === '48' ? '2 (48h)' : lead === '72' ? '3 (72h)' : '5 (120h)') + ' Verification Metrics');
+    });
+  });
+
+  // Dynamic filter for subdivision table
+  function filterSubdivisions() {
+    const input = document.getElementById('subdivSearch');
+    const filter = input.value.toLowerCase();
+    const rows = document.querySelectorAll('.subdiv-row');
+
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(filter) ? '' : 'none';
+    });
+  }
+
+  // Export CSV mock handler
+  function exportTableCSV() {
+    triggerToast('Subdivision verification matrix exported to CSV format.');
+  }
+
+  // Toast handler
+  function triggerToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    if (toast && toastMsg) {
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 3500);
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest py-space-sm px-margin-desktop shadow-[0_-1px_8px_rgba(0,0,0,0.6)] flex flex-wrap items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><span class="font-label-caps text-label-caps text-primary uppercase">Data Feeds</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Open-Meteo GFS 0.25° · IMD 0.25° Gridded Rainfall Observations · Model: Monsoon-UNet-Regime-v2.4</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-mono-sm text-label-mono-sm text-tertiary">Updated: 14 mins ago</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">IMD National Weather Forecasting Centre</span></div></footer></div></body></html>

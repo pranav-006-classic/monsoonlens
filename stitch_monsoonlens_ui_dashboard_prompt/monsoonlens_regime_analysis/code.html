@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#93ccff", "background": "#151310", "surface-container": "#221f1c", "on-background": "#e8e1dc", "tertiary": "#69f6b9", "surface-tint": "#ffba38", "on-tertiary-fixed-variant": "#005236", "primary": "#ffd79b", "inverse-surface": "#e8e1dc", "on-surface": "#e8e1dc", "on-secondary-fixed": "#001d31", "inverse-primary": "#7e5700", "error-container": "#93000a", "on-tertiary-container": "#005b3d", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#604100", "outline": "#9e8e78", "surface": "#151310", "surface-variant": "#373431", "on-surface-variant": "#d6c4ac", "error": "#ffb4ab", "on-tertiary": "#003824", "on-secondary-fixed-variant": "#004b73", "surface-container-lowest": "#100e0b", "on-primary-container": "#6b4900", "surface-container-high": "#2c2a26", "outline-variant": "#514532", "secondary-fixed": "#cce5ff", "primary-container": "#ffb300", "on-primary-fixed": "#281900", "on-secondary-container": "#002c47", "surface-container-highest": "#373431", "tertiary-container": "#48d99e", "on-error": "#690005", "tertiary-fixed": "#6ffbbe", "on-tertiary-fixed": "#002113", "on-secondary": "#003351", "primary-fixed-dim": "#ffba38", "surface-dim": "#151310", "secondary-fixed-dim": "#93ccff", "primary-fixed": "#ffdeac", "surface-bright": "#3c3935", "surface-container-low": "#1d1b18", "on-primary": "#432c00", "secondary-container": "#3198dc", "inverse-on-surface": "#33302c", "tertiary-fixed-dim": "#4edea3" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "1.5rem", "space-2xl": "2rem", "margin-desktop": "1.5rem", "space-lg": "1rem", "gutter": "0.75rem", "space-2xs": "0.125rem", "gutter-desktop": "1rem", "space-md": "0.75rem", "margin": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-xl-mobile": [ "Space Grotesk" ], "body-md": [ "Inter" ], "headline-sm": [ "Space Grotesk" ], "body-lg": [ "Inter" ], "headline-lg": [ "Space Grotesk" ], "data-display-md": [ "JetBrains Mono" ], "label-caps": [ "Space Grotesk" ], "data-tabular": [ "JetBrains Mono" ], "headline-md": [ "Space Grotesk" ], "body-sm": [ "Inter" ], "label-mono-sm": [ "JetBrains Mono" ], "headline-xl": [ "Space Grotesk" ], "headline-lg-mobile": [ "Space Grotesk" ], "data-display-lg": [ "JetBrains Mono" ] }, "fontSize": { "headline-xl-mobile": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "16px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-lg": [ "26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "data-display-md": [ "20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-caps": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" } ], "data-tabular": [ "13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-md": [ "20px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-mono-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" } ], "data-display-lg": [ "32px", { "lineHeight": "36px", "letterSpacing": "-0.03em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-14 bg-surface-container-lowest/95 backdrop-blur-md z-50 shadow-[0_1px_8px_rgba(0,0,0,0.6)] flex items-center justify-between px-margin-desktop gap-space-lg"><div class="flex items-center gap-space-lg flex-shrink-0"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-[20px]">radar</span></div><div><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">MonsoonLens</span><span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-tertiary font-label-mono-sm text-label-mono-sm">v2.4</span></div><span class="font-label-caps text-label-caps text-on-surface-variant block uppercase">Ministry of Earth Sciences · IMD</span></div></div><div class="h-6 w-px bg-surface-variant hidden lg:block"></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low p-space-2xs rounded-lg"><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-primary bg-primary-container font-semibold transition-colors">Day 1 · Today</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 2</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 3</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 4</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 5</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 6</button><button class="px-space-sm py-space-xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Day 7</button></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center bg-surface-container-low p-space-2xs rounded-lg"><button class="px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm bg-surface-container-high text-primary font-medium transition-colors">Open-Meteo</button><button class="px-space-sm py-space-2xs rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">GFS Ensemble</button></div><div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-mono-sm text-label-mono-sm text-tertiary uppercase tracking-wide">Cycle: 00Z OPERATIONAL</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-mono-sm text-label-mono-sm text-on-surface">FORECASTER #408</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">HQ New Delhi · Shift A</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-14 bottom-0 w-80 bg-surface-container-lowest z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md flex flex-col gap-space-md"><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase px-space-xs">Navigation Console</span><nav class="flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span>Overview</a><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="district-explorer" href="#"><span class="material-symbols-outlined text-[18px]">travel_explore</span>District Explorer</a><a aria-current="page" class="px-space-sm py-space-xs transition-colors flex items-center gap-space-sm bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="regime-analysis" href="#"><span class="material-symbols-outlined text-[18px]">air</span>Regime Analysis</a><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="verification" href="#"><span class="material-symbols-outlined text-[18px]">fact_check</span>Verification</a><a class="px-space-sm py-space-xs rounded-lg font-headline-sm text-headline-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-space-sm" data-path="methodology-and-docs" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span>Methodology &amp; Docs</a></nav></div><div class="flex flex-col gap-space-md bg-surface-container-low p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><span class="font-label-caps text-label-caps text-primary uppercase">Operational Filters</span><div class="flex flex-col gap-space-xs"><label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Target Meteorological Sub-Division</label><div class="relative"><select class="w-full appearance-none bg-surface-container-high text-on-surface font-body-sm text-body-sm rounded-lg px-space-sm py-space-xs pr-space-xl focus:outline-none focus:ring-1 focus:ring-primary"><option value="all">All India (Pan-Monsoon)</option><option value="ghats">Western Ghats &amp; Konkan</option><option value="northeast">Northeast India Sub-Grid</option><option value="central">Central India Core Monsoon</option></select><span class="material-symbols-outlined text-on-surface-variant absolute right-space-sm top-1/2 -translate-y-1/2 pointer-events-none text-[18px]">expand_more</span></div></div><div class="flex flex-col gap-space-xs"><label class="font-label-caps text-label-caps text-on-surface-variant uppercase">District Fast Find</label><div class="relative flex items-center"><span class="material-symbols-outlined text-on-surface-variant absolute left-space-sm text-[16px]">search</span><input class="w-full bg-surface-container-high text-on-surface font-body-sm text-body-sm rounded-lg pl-space-xl pr-space-xl py-space-xs placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search district or station..." type="text"/><kbd class="absolute right-space-sm font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container px-space-2xs py-space-2xs rounded">Ctrl+K</kbd></div></div><div class="flex flex-col gap-space-xs"><label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Rainfall Intensity Class</label><div class="grid grid-cols-2 gap-space-xs"><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;20 mm</span><span class="w-2 h-2 rounded-full bg-secondary"></span></button><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;64.5 mm</span><span class="w-2 h-2 rounded-full bg-primary-container"></span></button><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;115.6 mm</span><span class="w-2 h-2 rounded-full bg-surface-tint"></span></button><button class="flex items-center justify-between p-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors"><span class="font-label-mono-sm text-label-mono-sm">&gt;204.5 mm</span><span class="w-2 h-2 rounded-full bg-error"></span></button></div></div></div><div class="p-space-md rounded-xl bg-error-container/20 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-error uppercase">Active Triage Alert</span><span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span></div><div class="flex items-baseline gap-space-xs"><span class="font-data-display-md text-data-display-md text-error">14</span><span class="font-body-sm text-body-sm text-on-surface-variant">Districts in Warning State</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Red / Orange bulletin issued within 6h</span></div></div><div class="p-space-md bg-surface-container-lowest"><div class="flex items-center justify-between px-space-xs"><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">STATION TELEMETRY</span><span class="px-space-xs py-space-2xs rounded bg-tertiary/10 text-tertiary font-label-mono-sm text-label-mono-sm">SYNC OK</span></div></div></aside><div class="pl-80 flex flex-col min-h-screen"><main class="relative pt-14 flex-1 w-full px-space-lg bg-surface"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg pb-space-2xl">
+<!-- Top Action & Diagnostic Context Bar -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-primary font-label-mono-sm text-label-mono-sm uppercase">Diagnostic Workbench</span>
+<span class="text-on-surface-variant font-label-mono-sm text-label-mono-sm">/</span>
+<span class="text-on-surface-variant font-label-mono-sm text-label-mono-sm">SYNOPTIC REGIME EVALUATION</span>
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary/10 text-tertiary font-label-mono-sm text-label-mono-sm flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> LIVE CLASSIFICATION
+          </span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Post-Processing Skill by Synoptic Regime</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant hidden md:inline">Grid: IMD-NCMRWF 0.12° AI-UNet</span>
+</div>
+</div>
+<!-- Quick Operational Mode Switcher -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest p-space-2xs rounded-lg self-stretch xl:self-auto justify-end">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high text-primary font-label-mono-sm text-label-mono-sm font-semibold shadow-sm transition-all">Regime Analysis</button>
+<button class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm transition-all">Ensemble Dispersion</button>
+<button class="px-space-sm py-space-xs rounded text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm transition-all">Sub-Divisional Scorecard</button>
+</div>
+</div>
+<!-- Active Regime Status Ribbon & Synoptic Metric Telemetry -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-stretch">
+<!-- Active Regime Badge Showcase -->
+<div class="xl:col-span-5 bg-gradient-to-br from-surface-container to-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-primary/5 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Identified Monsoonal State</span>
+<span class="px-space-sm py-space-2xs rounded-full bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm font-bold flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-on-primary-container animate-pulse"></span> CURRENT STATUS
+            </span>
+</div>
+<div>
+<span class="font-headline-xl text-headline-xl text-primary font-bold">Active Monsoon Phase</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+              Synoptic trough south of normal position across Ganganagar to Kolkata. Deep convection focused along the Konkan corridor, Ghat crests, and Vidarbha core zone.
+            </p>
+</div>
+</div>
+<div class="mt-space-md flex flex-wrap gap-space-xs">
+<button class="px-space-sm py-space-xs rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-bold shadow-sm">Active (Active)</button>
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors font-body-sm text-body-sm">Break Monsoon</button>
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors font-body-sm text-body-sm">Weak Monsoon</button>
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors font-body-sm text-body-sm">Onset Phase</button>
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors font-body-sm text-body-sm">Withdrawal</button>
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors font-body-sm text-body-sm">Cyclonic Vortex</button>
+</div>
+</div>
+<!-- 4 Synoptic Telemetry Trackers -->
+<div class="xl:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<!-- Tracker 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Trough Axis</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">explore</span>
+</div>
+<div class="my-space-sm">
+<div class="font-data-display-lg text-data-display-lg text-on-surface">21.4°N</div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-semibold flex items-center gap-space-2xs mt-space-2xs">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span> -1.8° Anomalous (South)
+            </span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Pos: Conducive for Core</span>
+</div>
+<!-- Tracker 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">850 hPa LLJ</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">air</span>
+</div>
+<div class="my-space-sm">
+<div class="font-data-display-lg text-data-display-lg text-on-surface">38 <span class="font-body-md text-body-md text-on-surface-variant">kts</span></div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-semibold flex items-center gap-space-2xs mt-space-2xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12 kts vs Climo
+            </span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Findlater Jet: Strong</span>
+</div>
+<!-- Tracker 3 -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">BoB SST Anom</span>
+<span class="material-symbols-outlined text-error text-[20px]">thermostat</span>
+</div>
+<div class="my-space-sm">
+<div class="font-data-display-lg text-data-display-lg text-error">+0.8°C</div>
+<span class="font-label-mono-sm text-label-mono-sm text-error font-semibold flex items-center gap-space-2xs mt-space-2xs">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span> High Moisture Feed
+            </span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Head Bay Warm Anomaly</span>
+</div>
+<!-- Tracker 4 -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">MJO Index</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">cyclone</span>
+</div>
+<div class="my-space-sm">
+<div class="font-data-display-lg text-data-display-lg text-on-surface">Ph 3 <span class="font-body-md text-body-md text-on-surface-variant">/ 1.4A</span></div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-semibold flex items-center gap-space-2xs mt-space-2xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active Phase over IO
+            </span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Indian Ocean Center</span>
+</div>
+</div>
+</div>
+<!-- Section 1 & 2: Skill Matrix and Spatial Bias Heatmaps -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Card 1: Model Skill Matrix Across Regimes (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs pb-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-primary uppercase">Verification Benchmarking</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface-variant font-label-mono-sm text-label-mono-sm">T+24h to T+72h</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Equitable Threat Score (ETS) by Regime</span>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-sm py-space-xs rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded bg-surface-variant"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Raw NWP</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded bg-primary-container"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-semibold">AI Corrected</span>
+</div>
+</div>
+</div>
+<!-- Highlight Callouts -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm my-space-md">
+<div class="bg-surface-container p-space-md rounded-lg flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[20px]">trending_down</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-tertiary uppercase">Break Monsoon Phase</span>
+<div class="font-data-display-md text-data-display-md text-on-surface mt-space-2xs">+34% Accuracy Gain</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Massive suppression of persistent false-alarm drizzle in Central India core.</p>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-lg flex items-start gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[20px]">bolt</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Active Monsoon Phase</span>
+<div class="font-data-display-md text-data-display-md text-on-surface mt-space-2xs">+28% Detection Delta</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Resolves extreme orographic dumping along Western Ghats ridgeline (&gt;115mm).</p>
+</div>
+</div>
+</div>
+<!-- SVG Bar Chart -->
+<div class="w-full bg-surface-container-lowest p-space-md rounded-xl shadow-inner mt-space-xs">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">ETS Index (Higher is superior, max 1.0)</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">Threshold: Heavy Rain &gt; 64.5 mm/24h</span>
+</div>
+<!-- Comparative Bars Stack -->
+<div class="space-y-space-md">
+<!-- Active Monsoon -->
+<div>
+<div class="flex justify-between items-baseline mb-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Active Monsoon</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">0.68 vs 0.42 <span class="text-tertiary">(+61.9%)</span></span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 68%;"></div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-surface-variant h-full rounded-full transition-all duration-500" style="width: 42%;"></div>
+</div>
+</div>
+</div>
+<!-- Break Monsoon -->
+<div>
+<div class="flex justify-between items-baseline mb-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Break Monsoon</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">0.74 vs 0.38 <span class="text-tertiary">(+94.7%)</span></span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 74%;"></div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-surface-variant h-full rounded-full transition-all duration-500" style="width: 38%;"></div>
+</div>
+</div>
+</div>
+<!-- Weak Monsoon -->
+<div>
+<div class="flex justify-between items-baseline mb-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Weak Monsoon</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">0.61 vs 0.46 <span class="text-tertiary">(+32.6%)</span></span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 61%;"></div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-surface-variant h-full rounded-full transition-all duration-500" style="width: 46%;"></div>
+</div>
+</div>
+</div>
+<!-- Depression / Vortex -->
+<div>
+<div class="flex justify-between items-baseline mb-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Depression / Low Pressure Area</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">0.79 vs 0.59 <span class="text-tertiary">(+33.8%)</span></span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 79%;"></div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-surface-variant h-full rounded-full transition-all duration-500" style="width: 59%;"></div>
+</div>
+</div>
+</div>
+<!-- Onset / Withdrawal -->
+<div>
+<div class="flex justify-between items-baseline mb-space-2xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Onset &amp; Withdrawal Transition</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">0.55 vs 0.31 <span class="text-tertiary">(+77.4%)</span></span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 55%;"></div>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-surface-variant h-full rounded-full transition-all duration-500" style="width: 31%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>0.00 Poor</span>
+<span>0.25</span>
+<span>0.50 Operational Parity</span>
+<span>0.75</span>
+<span class="text-tertiary">1.00 Theoretical Upper Bound</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Spatial Systematic Bias: Raw vs AI Corrected (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-2xs pb-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase">Geospatial Bias Heatmap</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">All 36 Subdivisions</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Mean Error Discrepancy (mm/day)</span>
+</div>
+<!-- Comparative Side-by-Side Heatmaps -->
+<div class="grid grid-cols-2 gap-space-sm my-space-sm">
+<!-- Raw NWP Bias Panel -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-error font-semibold">RAW GFS / NCMRWF</span>
+<span class="px-space-xs py-space-2xs bg-error-container/30 text-error rounded font-label-mono-sm text-label-mono-sm font-bold">BIAS HIGH</span>
+</div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden bg-surface-container-lowest flex items-center justify-center">
+<div class="w-full h-full bg-cover bg-center opacity-70" data-location="Nagpur, Maharashtra, India" style=""></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<!-- Simulated Bias Overlay Tags -->
+<div class="absolute top-2 left-2 bg-error/90 text-on-error px-space-xs py-space-2xs rounded font-label-mono-sm text-label-mono-sm shadow-sm">
+                Ghats: -48mm (Dry)
+              </div>
+<div class="absolute bottom-6 right-2 bg-secondary-container/90 text-on-secondary px-space-xs py-space-2xs rounded font-label-mono-sm text-label-mono-sm shadow-sm">
+                Interior: +26mm (Wet)
+              </div>
+<div class="absolute bottom-1 left-2 font-label-caps text-label-caps text-on-surface-variant uppercase">
+                Systematic Error
+              </div>
+</div>
+<div class="flex flex-col gap-space-2xs pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Western Ghats Orographic Undershoot</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">RMSE: 31.8 mm · Mean: -12.4 mm</span>
+</div>
+</div>
+<!-- AI Corrected Bias Panel -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-semibold">AI POST-PROCESSED</span>
+<span class="px-space-xs py-space-2xs bg-tertiary/10 text-tertiary rounded font-label-mono-sm text-label-mono-sm font-bold">BALANCED</span>
+</div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden bg-surface-container-lowest flex items-center justify-center">
+<div class="w-full h-full bg-cover bg-center opacity-70" data-location="Bhopal, Madhya Pradesh, India" style=""></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<!-- Residual Bias Tag -->
+<div class="absolute top-2 left-2 bg-tertiary/90 text-on-tertiary px-space-xs py-space-2xs rounded font-label-mono-sm text-label-mono-sm font-semibold shadow-sm">
+                Subdivisions: ±1.8mm
+              </div>
+<div class="absolute bottom-6 right-2 bg-surface-container-high/90 text-on-surface px-space-xs py-space-2xs rounded font-label-mono-sm text-label-mono-sm shadow-sm">
+                Zero Mean Bias
+              </div>
+<div class="absolute bottom-1 left-2 font-label-caps text-label-caps text-on-surface-variant uppercase">
+                UNet Residual Delta
+              </div>
+</div>
+<div class="flex flex-col gap-space-2xs pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Topography-Calibrated Residual</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">RMSE: 11.2 mm · Mean: -0.3 mm</span>
+</div>
+</div>
+</div>
+<!-- Colorbar Scale for Bias -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex flex-col gap-space-xs mt-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="text-error">-40mm (Severe Dry)</span>
+<span class="text-on-surface font-semibold">0 mm</span>
+<span class="text-secondary">+40mm (Severe Wet)</span>
+</div>
+<div class="h-2 w-full rounded-full bg-gradient-to-r from-error via-surface-variant to-secondary"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-center mt-space-2xs">
+            Sub-grid topography embedding resolves leeward rain-shadow distortion completely.
+          </span>
+</div>
+</div>
+</div>
+<!-- Section 3 & 4: Regime Transition Matrix & Atmospheric Attribution (SHAP) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Card 3: Regime Transition Probability Matrix (Markov / Deep Learning Forecast) (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-primary uppercase">Stochastic Forecast</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-tertiary font-label-mono-sm text-label-mono-sm">Markov-DL Hybrid</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Regime Transition Probability Horizon</span>
+</div>
+<!-- Time Horizon Selector -->
+<div class="flex items-center bg-surface-container-lowest p-space-2xs rounded-lg">
+<button class="px-space-sm py-space-2xs rounded bg-surface-container-high text-primary font-label-mono-sm text-label-mono-sm font-semibold">3-Day Window</button>
+<button class="px-space-sm py-space-2xs rounded text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm">7-Day Window</button>
+<button class="px-space-sm py-space-2xs rounded text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm">14-Day Extended</button>
+</div>
+</div>
+<!-- Matrix Table -->
+<div class="overflow-x-auto w-full my-space-sm">
+<table class="w-full text-left font-data-tabular text-data-tabular">
+<thead>
+<tr class="bg-surface-container-lowest text-on-surface-variant font-label-caps text-label-caps uppercase">
+<th class="p-space-sm rounded-l-lg">Origin Regime</th>
+<th class="p-space-sm text-center">Active</th>
+<th class="p-space-sm text-center">Break</th>
+<th class="p-space-sm text-center">Weak</th>
+<th class="p-space-sm text-center">Vortex/Depr</th>
+<th class="p-space-sm text-center rounded-r-lg">Withdrawal</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant/20">
+<!-- Active Row (Current State highlighted) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="p-space-sm font-headline-sm text-headline-sm text-primary flex items-center gap-space-xs font-bold">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span> Active (Now)
+                </td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-primary-container text-on-primary font-bold">0.68</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-high text-on-surface-variant">0.12</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container text-on-surface-variant">0.08</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-secondary-container/30 text-secondary font-semibold">0.11</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-lowest text-on-surface-variant/60">0.01</div>
+</td>
+</tr>
+<!-- Break Row -->
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="p-space-sm font-body-md text-body-md text-on-surface">Break Phase</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container text-on-surface-variant">0.09</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-primary-container/70 text-on-primary font-bold">0.64</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-high text-on-surface-variant">0.21</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container text-on-surface-variant">0.04</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-lowest text-on-surface-variant/60">0.02</div>
+</td>
+</tr>
+<!-- Weak Row -->
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="p-space-sm font-body-md text-body-md text-on-surface">Weak Phase</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-high text-on-surface-variant">0.18</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-high text-on-surface-variant">0.24</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-primary-container/60 text-on-primary font-bold">0.51</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container text-on-surface-variant">0.05</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-lowest text-on-surface-variant/60">0.02</div>
+</td>
+</tr>
+<!-- Vortex Row -->
+<tr class="hover:bg-surface-container-high/50 transition-colors">
+<td class="p-space-sm font-body-md text-body-md text-on-surface">Cyclonic Vortex</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-secondary-container/40 text-secondary font-bold">0.44</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container text-on-surface-variant">0.04</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container text-on-surface-variant">0.07</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-primary-container/50 text-on-primary font-bold">0.42</div>
+</td>
+<td class="p-space-sm text-center">
+<div class="inline-block px-space-sm py-space-2xs rounded bg-surface-container-lowest text-on-surface-variant/60">0.03</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest mt-space-xs text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[16px]">info</span>
+<span>Forecast persistence for Active phase remains 68% over next 72 hours.</span>
+</div>
+<span class="text-primary font-semibold">Trough Anchored by Bay Low</span>
+</div>
+</div>
+<!-- Card 4: Atmospheric Attribution & SHAP Predictor Ranking (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-2xs pb-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase">Explainable AI (XAI)</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-tertiary font-label-mono-sm text-label-mono-sm">TreeSHAP + Gradient</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Predictor Attribution Weights (|SHAP|)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Leading synoptic features governing AI bias corrections during current Active Monsoonal regime:
+        </p>
+<!-- Horizontal SHAP Value Bar Rankings -->
+<div class="space-y-space-md my-space-md">
+<!-- Item 1: 850 hPa Zonal Wind U -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex justify-between items-center text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="font-body-md text-body-md font-semibold text-primary">1. 850 hPa Zonal Wind (U-component)</span>
+<span class="font-bold text-tertiary">+0.384</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-3 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-700" style="width: 94%;"></div>
+</div>
+<div class="flex justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Low-Level Jet Speed &amp; Shearing</span>
+<span>Primary Modulator</span>
+</div>
+</div>
+<!-- Item 2: Integrated Water Vapor Transport (IVT) -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex justify-between items-center text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="font-body-md text-body-md font-semibold text-on-surface">2. Integrated Vapor Transport (IVT)</span>
+<span class="font-bold text-tertiary">+0.312</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-3 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full transition-all duration-700" style="width: 78%;"></div>
+</div>
+<div class="flex justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Atmospheric River Corridors from Arabian Sea</span>
+<span>Moisture Flux</span>
+</div>
+</div>
+<!-- Item 3: High-Res DEM Topography Slope -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex justify-between items-center text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="font-body-md text-body-md font-semibold text-on-surface">3. Topographic Slope &amp; Aspect (DEM 90m)</span>
+<span class="font-bold text-tertiary">+0.267</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-3 rounded-full overflow-hidden flex">
+<div class="bg-tertiary h-full rounded-full transition-all duration-700" style="width: 66%;"></div>
+</div>
+<div class="flex justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Ghats Ridgeline Orographic Lift</span>
+<span>Static Field</span>
+</div>
+</div>
+<!-- Item 4: CAPE -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex justify-between items-center text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="font-body-md text-body-md font-semibold text-on-surface">4. Convective Available Potential Energy</span>
+<span class="font-bold text-tertiary">+0.185</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-3 rounded-full overflow-hidden flex">
+<div class="bg-surface-tint h-full rounded-full transition-all duration-700" style="width: 46%;"></div>
+</div>
+<div class="flex justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Deep Convection Instability Index</span>
+<span>Thermodynamics</span>
+</div>
+</div>
+<!-- Item 5: Sea Level Pressure Anomaly -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex justify-between items-center text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="font-body-md text-body-md font-semibold text-on-surface">5. Sea Level Pressure Anomaly (SLPA)</span>
+<span class="font-bold text-tertiary">+0.124</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-3 rounded-full overflow-hidden flex">
+<div class="bg-secondary-container h-full rounded-full transition-all duration-700" style="width: 32%;"></div>
+</div>
+<div class="flex justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Monsoon Trough Gradient Dipole</span>
+<span>Barometric</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Global Baseline SHAP Loss: 0.041</span>
+<span class="text-tertiary font-bold">R² Variance Explained: 89.4%</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Dock: Export & Operational Briefing -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Synoptic Advisory Formulation Ready</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Validated against 1,420 IMD Automatic Weather Stations (AWS) over preceding 24h.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant font-headline-sm text-headline-sm font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span> Export SHAP Audit CSV
+        </button>
+<button class="px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container hover:bg-surface-tint font-headline-sm text-headline-sm font-bold transition-colors flex items-center gap-space-xs shadow-md">
+<span class="material-symbols-outlined text-[18px]">publish</span> Deploy Regime Weights
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for regime selector pills
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Non-destructive tactile state toggle for demonstration
+      if(this.classList.contains('bg-surface-container-high') && !this.closest('.matrix-cell')) {
+        const siblings = this.parentElement.querySelectorAll('button');
+        siblings.forEach(s => {
+          s.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+          s.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        this.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+        this.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      }
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest py-space-sm px-margin-desktop shadow-[0_-1px_8px_rgba(0,0,0,0.6)] flex flex-wrap items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><span class="font-label-caps text-label-caps text-primary uppercase">Data Feeds</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Open-Meteo GFS 0.25° · IMD 0.25° Gridded Rainfall Observations · Model: Monsoon-UNet-Regime-v2.4</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-mono-sm text-label-mono-sm text-tertiary">Updated: 14 mins ago</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">IMD National Weather Forecasting Centre</span></div></footer></div></body></html>
