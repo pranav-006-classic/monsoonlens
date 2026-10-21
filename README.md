@@ -4,7 +4,7 @@
 A high-density operational-grade meteorology workstation designed for atmospheric scientists, state disaster management authorities, and hydrological modelers monitoring the Indian monsoon.
 
 ## Tech Stack
-- **Frontend**: React (Vite), Tailwind CSS (customized with `DESIGN.md` dark mission-control palette), Leaflet & React-Leaflet (CartoDB Dark Matter tiles), Recharts (Hyetographs, Lead-Time Skill Progression, Threshold CSI, ROC Curves), Material Symbols Outlined.
+- **Frontend**: React (Vite), Tailwind CSS (mission-control palette), Leaflet & React-Leaflet (CartoDB Dark Matter tiles), Recharts (Hyetographs, Lead-Time Skill Progression, Threshold CSI, ROC Curves), Material Symbols Outlined.
 - **Backend**: FastAPI (Python 3.14), Uvicorn, HTTPX, Pydantic.
 - **Data Integration**:
   - Live **Open-Meteo API** integration for global NWP (GFS/ECMWF) precipitation, wind, CAPE, and 7-day daily forecasts.
@@ -42,7 +42,6 @@ monsoonlens/
 │   │   └── index.css                       # Leaflet dark overrides & Tailwind
 │   ├── tailwind.config.js                  # Operational Monsoon Intelligence design tokens
 │   └── index.html
-├── stitch_monsoonlens_ui_dashboard_prompt/ # Original extracted design files & mockups
 └── start.bat                               # One-click launcher script
 ```
 
